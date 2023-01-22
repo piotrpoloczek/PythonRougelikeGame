@@ -52,6 +52,7 @@ def main():
             dx, dy = DIRECTIONS[key]
             player["x"] += dx
             player["y"] += dy
+            board[player["y"]-dy][player["x"]-dx] = ' '
         else:
             pass
         util.clear_screen()
