@@ -50,9 +50,10 @@ def main():
             is_running = False
         elif key in DIRECTIONS.keys():
             dx, dy = DIRECTIONS[key]
-            player["x"] += dx
-            player["y"] += dy
-            board[player["y"]-dy][player["x"]-dx] = ' '
+            if 0 <= (player["x"] + dx ) < BOARD_WIDTH and 0 <= (player["y"] + dy) < BOARD_HEIGHT:
+                player["x"] += dx
+                player["y"] += dy
+                board[player["y"]-dy][player["x"]-dx] = ' '
         else:
             pass
         util.clear_screen()
