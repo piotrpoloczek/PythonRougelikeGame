@@ -1,5 +1,5 @@
 from main import DIRECTIONS, BOARD_HEIGHT, BOARD_WIDTH
-from board import get_board_height, get_board_width
+from board import get_board_height, get_board_width, check_possible_move
 
 PLAYER_ICON = "@"
 PLAYER_START_X = 3
@@ -10,7 +10,7 @@ def create_player():
     """
     Creates a 'player' dictionary for storing all player related informations - i.e. player icon, player position.
     Fell free to extend this dictionary!
-
+    
     Returns:
     dictionary
     """
@@ -21,11 +21,3 @@ def create_player():
 
     return player
 
-def move(key, player, board):
-    dx, dy = DIRECTIONS[key]
-    if 0 <= (player["x"] + dx ) < get_board_width(board) and 0 <= (player["y"] + dy) < get_board_height(board):
-        player["x"] += dx
-        player["y"] += dy
-        board[player["y"]-dy][player["x"]-dx] = ' '
-    else:
-        pass

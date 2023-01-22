@@ -1,3 +1,7 @@
+BOARD_WIDTH = 30
+BOARD_HEIGHT = 20
+
+
 def create_board(width, height):
     """
     Creates a new game board based on input parameters.
@@ -7,12 +11,11 @@ def create_board(width, height):
     int: The height of the board
 
     Returns:
-    list: Game board
+    list: Game boardyy
     """
     board = [[" " for _ in range(width)] for _ in range(height)]
 
     return board
-
 
 def put_player_on_board(board, player):
     """
@@ -26,3 +29,12 @@ def put_player_on_board(board, player):
     Nothing
     """
     board[player["y"]][player["x"]] = player["symbol"]
+
+def get_board_height(board):
+    return len(board)
+
+def get_board_width(board):
+    return len(board[0])
+
+def check_possible_move(board, position_x, position_y):
+    pass
