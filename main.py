@@ -44,7 +44,6 @@ def main():
     while is_running:
         engine.put_player_on_board(board, player)
         ui.display_board(board)
-        pp(player)
         key = util.key_pressed().lower()
         if key == "q":
             is_running = False
