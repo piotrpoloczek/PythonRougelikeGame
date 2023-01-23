@@ -1,4 +1,4 @@
-def turn():
+def turn(board):
     pass
 
 def player_turn():

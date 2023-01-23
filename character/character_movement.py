@@ -8,7 +8,6 @@ DIRECTIONS = {
     "d": (1, 0),
 }
 
-
 def key_not_in_directions(key):
     if key not in DIRECTIONS:
         return True

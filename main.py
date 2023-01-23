@@ -1,7 +1,5 @@
 import util
 import board
-import ui
-import player as player_module
 
 from pprint import pprint as pp
 

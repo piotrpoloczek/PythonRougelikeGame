@@ -5,7 +5,6 @@ def display_board(board):
     Returns:
     Nothing
     """
-
     print("# " * (len(board[0]) + 2))
     for row in board:
         line = "#"
