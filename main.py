@@ -8,9 +8,6 @@ from pprint import pprint as pp
 
 
 
-
-
-
 def main():
     player = player_module.create_player()
     board_present = engine.create_board(BOARD_WIDTH, BOARD_HEIGHT)
