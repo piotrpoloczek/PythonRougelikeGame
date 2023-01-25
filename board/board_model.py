@@ -11,7 +11,7 @@ def create_board(width, height):
     int: The height of the board
 
     Returns:
-    list: Game boardyy
+    list: Game board
     """
     board = [[" " for _ in range(width)] for _ in range(height)]
 
@@ -37,4 +37,10 @@ def get_board_width(board):
     return len(board[0])
 
 def check_possible_move(board, position_x, position_y):
+    pass
+
+def check_position(board, x, y):
+    """
+    check position
+    """
     pass

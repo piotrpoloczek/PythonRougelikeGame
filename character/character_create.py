@@ -1,10 +1,15 @@
-def create_character(name, position, symbol, attack, hp):
-    character = {
-        'name': name,
-        'x': position[0],
-        'y': position[1],
-        'symbol': symbol,
-        'attack': attack,
-        'hp': hp,
-    }
+from character.character_set import (
+    set_position, set_name, set_hp,
+    set_attack, set_icon,
+)
+
+
+def create_character(name, position, icon, attack, hp):
+    character = {}
+    set_name(character, name)
+    set_icon(character, icon)
+    set_position(character, position)
+    set_attack(character, attack)
+    set_hp(character, hp)
+
     return character
