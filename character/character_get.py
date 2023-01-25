@@ -1,17 +1,26 @@
-def get_name(character):
-    pass
+from character.character_const import (
+    NAME, POSITION_X, POSITION_Y, 
+    ICON, ATTACK, HP, INVENTORY
+)
 
-def get_position(character):
-    pass
+
+def get_name(character):
+    return character[NAME]
+
+def get_x_position(character):
+    return character[POSITION_X]
+
+def get_y_position(character):
+    return character[POSITION_Y]
 
 def get_icon(character):
-    pass
+    return character[ICON]
 
 def get_attack(character):
-    pass
+    return character[ATTACK]
 
 def get_hp(character):
-    pass
+    return character[HP]
 
 def get_inventory(character):
-    pass
+    return character[INVENTORY]

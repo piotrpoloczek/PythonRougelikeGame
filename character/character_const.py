@@ -1,0 +1,7 @@
+NAME = 'name'
+ICON = 'icon'
+POSITION_X = 'x'
+POSITION_Y = 'y'
+ATTACK = 'attack'
+HP = 'hp'
+INVENTORY = 'inventory'

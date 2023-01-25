@@ -1,17 +1,26 @@
-def set_name(character, name):
-    pass
+from character.character_const import (
+    NAME, POSITION_X, POSITION_Y, 
+    ICON, ATTACK, HP, INVENTORY
+)
 
-def set_position(character, position):
-    pass
+
+def set_name(character, name):
+    character[NAME] = name
+
+def set_x_position(character, x_position):
+    character[POSITION_X] = x_position
+
+def set_y_position(character, y_position):
+    character[POSITION_Y] = y_position
 
 def set_icon(character, icon):
-    pass
+    character[ICON] = icon
 
 def set_attack(character, attack):
-    pass
+    character[ATTACK] = attack
 
 def set_hp(character, hp):
-    pass
+    character[HP] = hp
 
-def set_inventory(character, inventory):
-    pass
+def set_inventory(character, hp):
+    character[INVENTORY] = hp

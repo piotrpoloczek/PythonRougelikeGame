@@ -1,15 +1,17 @@
-from game.game_prepare import prepare_game
-
-
+from player.player_create import create_player
+from level.level_run import run_level
+from level.level_prepare import prepare_levels
+from game.game_set import set_game
 
 
 def main():
-    game = prepare_game()
+    player = create_player()
+    levels = prepare_levels()
+    game = {}
 
-    current_level = True
-    while current_level:
-        pass
-
+    for level in levels:
+        set_game(game, player, level)
+        run_level(game)
 
 if __name__ == "__main__":
     main()

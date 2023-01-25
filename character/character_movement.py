@@ -1,29 +1,18 @@
 from board.board_functions import can_move, clean_coordinates
+from coordinates.coordinates_function import input_to_directions
+from coordinates.coordinates_get import get_x_coordinate, get_y_coordinate
+from character.character_set import set_x_position, set_y_position
 
-
-DIRECTIONS = {
-    "w": (0, -1),
-    "a": (-1, 0),
-    "s": (0, 1),
-    "d": (1, 0),
-}
-
-def key_not_in_directions(key):
-    if key not in DIRECTIONS:
-        return True
-
-def get_coordinates(key):
-    dx, dy = DIRECTIONS[key]
-    return {'x': dx, 'y': dy}
 
 def move(character, key, board):
-    if key_not_in_directions(key):
+    try:
+        coordinates = input_to_directions(key)
+        if can_move(character, coordinates, board):
+            set_x_position(character, get_x_coordinate(coordinates))
+            set_y_position(character, get_y_coordinate(coordinates))
+            clean_coordinates()
+            return True
+    except:
         return False
-    coordinates = get_coordinates(key)
-    if can_move(character, coordinates, board):
-        character["x"] += coordinates['x']
-        character["y"] += coordinates['y']
-        clean_coordinates()
-        return True
-        
+            
 

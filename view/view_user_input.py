@@ -8,7 +8,7 @@ QUIT = 'q'
 def get_user_input(label):
     return input(label)
 
-def get_user_key():
+def get_input_from_keyboard():
     return key_pressed().lower()
     
 def exit_game(user_input):
@@ -16,9 +16,11 @@ def exit_game(user_input):
         raise ExitException
 
 def get_user_key():
-    user_input = get_user_input()
+    user_input = get_input_from_keyboard()
     try:
         exit_game(user_input)
-
+        return key_pressed()
     except ExitException:
-        print('you exited the game!')
+        pass
+        # quit the game function
+

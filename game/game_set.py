@@ -1,4 +1,4 @@
-from game.game_const import BOARD, OPPONENTS, PLAYER
+from const import BOARD, OPPONENTS, PLAYER, LEVEL
 
 
 def set_board(game, board):
@@ -10,7 +10,9 @@ def set_player(game, player):
 def set_opponents(game, opponents):
     game[OPPONENTS] = opponents
 
-def pack_game(game, player, board, opponents):
-    set_board(game, board)
+def set_level(game, level):
+    game[LEVEL] = level
+
+def set_game(game, player, level):
     set_player(game, player)
-    set_opponents(game, opponents)
+    set_level(game, level)

@@ -7,4 +7,4 @@ def prepare_game():
     board = create_board()
     player = create_player()
     opponents = []
-    return set_game(player, board, opponents)
+    return player, board, opponents

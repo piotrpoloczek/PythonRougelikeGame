@@ -1,13 +1,9 @@
 from character.character_create import create_character
 from view.view_user_input import get_user_input
-
-
-PLAYER_ICON = "@"
-PLAYER_POSITION = (3, 3)
-PLAYER_START_X = 3
-PLAYER_START_Y = 3
-HP = 100
-ATTACK = 50
+from player.player_const import (
+    PLAYER_ICON, PLAYER_POSITION, PLAYER_START_X, 
+    PLAYER_START_Y, HP, ATTACK
+)
 
 
 def get_starting_inventory():
