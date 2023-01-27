@@ -1,5 +1,6 @@
 NAME = 'name'
 ICON = 'icon'
+COORDINATES = 'coordinates'
 POSITION_X = 'x'
 POSITION_Y = 'y'
 ATTACK = 'attack'

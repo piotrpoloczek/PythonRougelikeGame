@@ -1,7 +1,12 @@
 from character.character_const import (
     NAME, POSITION_X, POSITION_Y, 
-    ICON, ATTACK, HP, INVENTORY
+    ICON, ATTACK, HP, INVENTORY, COORDINATES
 )
+from coordinates.coordinates_get import get_x_coordinate, get_y_coordinate
+from exception.exception_custom import MoreCoordinatesInListException
+
+
+FIRST_INDEX_COORDINATES = 0
 
 
 def get_name(character):
@@ -24,3 +29,14 @@ def get_hp(character):
 
 def get_inventory(character):
     return character[INVENTORY]
+
+def get_coordinates(character):
+    return character[COORDINATES]
+
+def get_x_y_coordinate(character):
+    coordinates = get_coordinates(character)
+    if len(coordinates) == 1:
+        x = get_x_coordinate(coordinates[FIRST_INDEX_COORDINATES])
+        y = get_y_coordinate(coordinates[FIRST_INDEX_COORDINATES])
+        return x, y
+    raise MoreCoordinatesInListException

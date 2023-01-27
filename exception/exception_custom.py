@@ -8,3 +8,19 @@ class CoordinateException(Exception):
 
 class EndLevelException(Exception):
     pass
+
+
+class MoreCoordinatesInListException(Exception):
+    pass
+
+
+class FightException(Exception):
+    pass
+
+
+class ItemFoundException(Exception):
+    pass
+
+
+class CoordinatesOutsideBoardException(Exception):
+    pass

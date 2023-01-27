@@ -21,6 +21,5 @@ def get_user_key():
         exit_game(user_input)
         return key_pressed()
     except ExitException:
-        pass
-        # quit the game function
+        exit()
 

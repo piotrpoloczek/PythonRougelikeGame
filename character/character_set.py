@@ -1,6 +1,6 @@
 from character.character_const import (
     NAME, POSITION_X, POSITION_Y, 
-    ICON, ATTACK, HP, INVENTORY
+    ICON, ATTACK, HP, INVENTORY, COORDINATES
 )
 
 
@@ -24,3 +24,7 @@ def set_hp(character, hp):
 
 def set_inventory(character, hp):
     character[INVENTORY] = hp
+
+def set_coordinates_list(character, coordinates_list):
+    character[COORDINATES] = coordinates_list
+

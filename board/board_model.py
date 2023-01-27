@@ -1,5 +1,13 @@
+from character.character_get import get_x_y_coordinate
+from exception.exception_custom import (
+    MoreCoordinatesInListException, CoordinatesOutsideBoardException,
+    CoordinateException,
+)    
+
+
 BOARD_WIDTH = 30
 BOARD_HEIGHT = 20
+
 
 
 def create_board(width, height):
@@ -14,7 +22,6 @@ def create_board(width, height):
     list: Game board
     """
     board = [[" " for _ in range(width)] for _ in range(height)]
-
     return board
 
 def put_player_on_board(board, player):
@@ -28,8 +35,16 @@ def put_player_on_board(board, player):
     Returns:
     Nothing
     """
-    board[player["y"]][player["x"]] = player["symbol"]
+    try:
+        x, y = get_x_y_coordinate(player)
+        board[y][x] = player["icon"]
+    except IndexError:
+        raise CoordinateException
 
+def clear_place_on_board(board, player):
+    x, y = get_x_y_coordinate(player)
+    board[y][x] = ' '
+    
 def get_board_height(board):
     return len(board)
 

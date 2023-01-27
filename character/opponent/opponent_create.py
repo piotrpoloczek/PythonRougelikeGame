@@ -1,2 +1,2 @@
-def create_opponents():
+def create_opponents(file):
     return []
