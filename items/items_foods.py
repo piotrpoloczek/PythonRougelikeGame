@@ -1,0 +1,7 @@
+from items.items_const import TYPE, TYPE_ARMOR, TYPE_FOOD, TYPE_SKIL, TYPE_WEAPON, NAME, QUANTITY, POWER, SYMBOL
+
+items = [
+    {TYPE: TYPE_FOOD, NAME: 'sugar', QUANTITY: 500, POWER: 25, SYMBOL: '&'},
+    {TYPE: TYPE_FOOD, NAME: 'honey', QUANTITY: 500, POWER: 25, SYMBOL: 'A'},
+    {TYPE: TYPE_FOOD, NAME: 'maple syrup', QUANTITY: 500, POWER: 25, SYMBOL: 'B'},   
+]

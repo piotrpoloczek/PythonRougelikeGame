@@ -4,3 +4,7 @@ class ExitException(Exception):
 
 class CoordinateException(Exception):
     pass
+
+
+class EndLevelException(Exception):
+    pass
