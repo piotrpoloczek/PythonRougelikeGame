@@ -1,7 +1,7 @@
-from items.items_const import TYPE, TYPE_ARMOR, TYPE_FOOD, TYPE_SKIL, TYPE_WEAPON, NAME, QUANTITY, POWER, SYMBOL
+from items.items_create import create_food
 
 items = [
-    {TYPE: TYPE_FOOD, NAME: 'sugar', QUANTITY: 500, POWER: 25, SYMBOL: '&'},
-    {TYPE: TYPE_FOOD, NAME: 'honey', QUANTITY: 500, POWER: 25, SYMBOL: 'A'},
-    {TYPE: TYPE_FOOD, NAME: 'maple syrup', QUANTITY: 500, POWER: 25, SYMBOL: 'B'},   
+    create_food('sugar', 40, 12, 'F'),
+    create_food('honey', 60, 15, 'H'),
 ]
+
