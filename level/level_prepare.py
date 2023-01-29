@@ -1,6 +1,6 @@
 from game.game_set import set_player, set_board, set_opponents
 # Dominik proszę o implementację z twoich funkcji ;)
-from board.board_create import create_board
+from board.board_create import create_board_from_file
 from board.board_model import put_player_on_board
 from character.opponent.opponent_create import create_opponents
 from game.game_set import set_level, set_player
@@ -14,7 +14,7 @@ particular level.
 """
 def prepare_level(player, file):
     level = {}
-    board = create_board(file)
+    board = create_board_from_file('maps/level_1.csv')
     opponents = create_opponents(file)
     set_board(level, board)
     set_opponents(level, opponents)

@@ -1,4 +1,4 @@
-
+from board.board_const import WALL, EMPTY_COORDINATES, EMPTY_SPACE
 
 
 def create_board(file):
@@ -15,3 +15,11 @@ def create_board(file):
     board = [[" " for _ in range(width)] for _ in range(height)]
 
     return board
+
+
+def create_board_from_file(file):
+    with open(file) as file:
+        lines = file.readlines()
+        lines = [list(line.strip()) for line in lines]
+        return lines
+    
