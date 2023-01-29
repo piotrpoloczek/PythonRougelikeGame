@@ -4,7 +4,7 @@ from character.player.player_const import (
     PLAYER_ICON, PLAYER_POSITION, PLAYER_START_X, 
     PLAYER_START_Y, HP, ATTACK
 )
-from coordinates.coordinates_create import create_coordinates_list_one_coordinate
+from coordinates.coordinates_create import create_coordinates_list_one_coordinate, create_coordinates
 
 
 def get_starting_inventory():
@@ -18,7 +18,14 @@ def create_player():
     dictionary
     """
     name = get_user_input("Please choose the name for your hero: ")
-    player_coordinate_list = create_coordinates_list_one_coordinate(PLAYER_START_X, PLAYER_START_Y)
+    #player_coordinate_list = create_coordinates_list_one_coordinate(PLAYER_START_X, PLAYER_START_Y)
+    # for debuging purpouses
+    player_coordinate_list = [
+        create_coordinates(3, 3),
+        create_coordinates(3, 4),
+        create_coordinates(4, 3),
+        create_coordinates(4, 4),
+    ]
     player = create_character(name, player_coordinate_list, PLAYER_ICON, ATTACK, HP)
     player['inventory'] = get_starting_inventory()
 
