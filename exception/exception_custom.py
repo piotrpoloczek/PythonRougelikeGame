@@ -19,8 +19,11 @@ class FightException(Exception):
 
 
 class ItemFoundException(Exception):
-    pass
-
+    def __init__(self, coordinates):
+        self.coordinates = coordinates
 
 class CoordinatesOutsideBoardException(Exception):
+    pass
+
+class ItemNotFoundException(Exception):
     pass

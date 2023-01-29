@@ -3,3 +3,4 @@ def move(character, board):
 
 def attack(character, opponent):
     pass
+

@@ -8,6 +8,8 @@ from exception.exception_custom import (
 from character.character_coordinates import coordinate_list_append
 from board.board_check import check_new_coordinates
 from board.board_set import set_character_on_board, set_empty_coordinates_on_board
+from items.items_get import get_item_from_items
+from character.player.player_inventory import add_item_to_inventory
 
 
 def move(character, direction, board):
@@ -19,6 +21,12 @@ def move(character, direction, board):
     set_coordinates_list(character, new_coordinates_list)
     set_character_on_board(board, character)
 
+def take_item(character, board, item_coordinates_list):
+    set_empty_coordinates_on_board(board, item_coordinates_list)
+    item = get_item_from_items(item_coordinates_list)
+    add_item_to_inventory(character, item)
+
+
 def try_move(character, direction, board):
     try:
         move(character, direction, board)
@@ -26,7 +34,7 @@ def try_move(character, direction, board):
         print('There is more coordinates to unpack, please implement the functions for bigger objects!!!')
     except FightException:
         print("There is opponent in front of you please implement the functions for fighting")
-    except ItemFoundException:
-        print("Implement the function for grabing the item!!!")
+    except ItemFoundException as exception:
+        item_coordiantes = [exception.coordinates]
+        take_item(character, board, item_coordiantes)
         move(character, direction, board)
-
