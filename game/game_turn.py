@@ -5,6 +5,7 @@ from coordinates.coordinates_function import input_to_directions
 from exception.exception_custom import CoordinateException
 from character.character_movement import try_move
 from view.view_functions import clear_screen
+from items.items_all import get_all_items
 
 
 def turn_run(game):
@@ -13,6 +14,7 @@ def turn_run(game):
 
     clear_screen()
     display_board(board)
+    print(get_all_items())
 
     player_turn(player, board)
     for opponent in opponents:
