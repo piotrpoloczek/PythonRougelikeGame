@@ -16,4 +16,3 @@ def input_to_directions(input):
 def get_coordinates(key):
     dx, dy = DIRECTIONS[key]
     return create_coordinates(dx, dy)
-

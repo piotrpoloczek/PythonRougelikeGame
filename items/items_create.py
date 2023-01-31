@@ -1,5 +1,5 @@
 from items.items_const import TYPE_ARMOR, TYPE_FOOD, TYPE_SKIL, TYPE_WEAPON
-from items.items_set import set_power, set_name, set_symbol, set_type
+from items.items_set import set_power, set_name, set_symbol, set_type, set_coordinates
 
 
 """
@@ -15,6 +15,7 @@ def set_attributes(item, name, power, symbol):
     set_name(item, name)
     set_power(item, power)
     set_symbol(item, symbol)
+    set_coordinates(item, None)
 
 def create_food(name, power, symbol):
     food = create_item()

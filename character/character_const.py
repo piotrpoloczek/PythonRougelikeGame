@@ -6,3 +6,6 @@ POSITION_Y = 'y'
 ATTACK = 'attack'
 HP = 'hp'
 INVENTORY = 'inventory'
+RANDOM_HP = 30
+RANDOM_ATTACK = 5
+RANDOM_MULTIPLICATOR = 0.1

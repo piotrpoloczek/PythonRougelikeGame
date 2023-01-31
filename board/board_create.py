@@ -11,4 +11,3 @@ def create_board_from_file(file):
         lines = file.readlines()
         lines = [list(line.strip()) for line in lines]
         return lines
-    

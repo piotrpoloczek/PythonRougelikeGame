@@ -30,7 +30,6 @@ def get_item_by_symbol(symbol):
 
 def get_item_by_coordiantes(items, coordinates):
     for item in items:
-        print('item_coordinates: ' , get_item_coordinates(item), coordinates[0])
         if get_item_coordinates(item) == coordinates[0]:
             return item
 

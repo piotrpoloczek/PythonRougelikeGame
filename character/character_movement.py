@@ -38,6 +38,5 @@ def try_move(character, direction, level):
     except ItemFoundException as exception:
         item_coordiantes = [exception.coordinates]
         item = get_item_by_coordiantes(items, item_coordiantes)
-        print('item: ', item, 'items: ',  items)
         take_item(character, item, board)
         move(character, direction, level)

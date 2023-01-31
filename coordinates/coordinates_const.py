@@ -4,5 +4,6 @@ DIRECTIONS = {
     "s": (0, 1),
     "d": (1, 0),
 }
+KEYS = ['w', 'a', 's', 'd']
 COORDINATE_X = 'x'
 COORDINATE_Y = 'y'

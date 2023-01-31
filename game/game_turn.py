@@ -1,3 +1,5 @@
+import random
+from coordinates.coordinates_const import KEYS
 from view.view_user_input import get_user_key
 from game.game_get import get_game, get_board_opponents_items, get_items
 from board.board_view import display_board
@@ -7,6 +9,8 @@ from character.character_movement import try_move
 from view.view_functions import clear_screen
 from items.items_list import ITEMS
 from items.items_get import get_all_symbols
+from board.board_get import get_board_coordiantes_symbol
+from character.opponent.opponent_get import get_opponents_from_board
 
 
 def turn_run(game):
@@ -17,6 +21,7 @@ def turn_run(game):
     clear_screen()
     display_board(board)
     print(player)
+    print(opponents)
 
     player_turn(player, level)
     for opponent in opponents:
@@ -31,5 +36,10 @@ def player_turn(player, level):
     except CoordinateException:
         player_turn(player, level)
 
-def opponent_turn(opponent, level):
-    pass
+def opponent_turn(opponent, player, level):
+    random_key = random.choice(KEYS)
+    try:
+        direction = input_to_directions(random_key)
+        try_move(opponent, direction, level)
+    except CoordinateException:
+        opponent_turn(opponent, player, level)
