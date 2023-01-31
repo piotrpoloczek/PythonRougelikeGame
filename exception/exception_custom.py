@@ -27,3 +27,7 @@ class CoordinatesOutsideBoardException(Exception):
 
 class ItemNotFoundException(Exception):
     pass
+
+
+class FightException(Exception):
+    pass

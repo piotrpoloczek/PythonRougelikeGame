@@ -18,7 +18,7 @@ def move(character, direction, level):
     old_coordinates_list = get_coordinates(character)
     new_coordinates_list = coordinate_list_append(old_coordinates_list, direction)
 
-    check_new_coordinates(new_coordinates_list, board, character)
+    check_new_coordinates(new_coordinates_list, character, level)
     set_empty_coordinates_on_board(board, old_coordinates_list)
     set_coordinates_list(character, new_coordinates_list)
     set_character_on_board(board, character)

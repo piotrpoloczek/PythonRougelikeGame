@@ -1,4 +1,5 @@
 from copy import deepcopy
+from character.character_const import ICON
 from character.opponent.opponent_list import OPPONENTS
 from character.character_get import get_icon, get_coordinates
 from character.character_set import set_coordinates_list
@@ -21,6 +22,11 @@ def get_coordiantes_with_opponents(board):
         if get_icon(coordinate) in symbols:
             opponents_coordinates.append(coordinate)
     return opponents_coordinates
+
+def remove_symbol(opponents_coordiantes_symbol):
+    for opponent in opponents_coordiantes_symbol[:]:
+        del opponent[ICON]
+    return opponents_coordiantes_symbol
 
 def get_opponents_from_board(board):
     opponents = []
