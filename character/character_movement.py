@@ -8,11 +8,13 @@ from exception.exception_custom import (
 from character.character_coordinates import coordinate_list_append
 from board.board_check import check_new_coordinates
 from board.board_set import set_character_on_board, set_empty_coordinates_on_board
-from items.items_get import get_item_from_items
+from items.items_get import get_items_from_board, get_item_by_coordiantes, get_item_coordinates
 from character.player.player_inventory import add_item_to_inventory
+from game.game_get import get_board_opponents_items
 
 
-def move(character, direction, board):
+def move(character, direction, level):
+    board, opponents, items  = get_board_opponents_items(level)
     old_coordinates_list = get_coordinates(character)
     new_coordinates_list = coordinate_list_append(old_coordinates_list, direction)
 
@@ -21,20 +23,21 @@ def move(character, direction, board):
     set_coordinates_list(character, new_coordinates_list)
     set_character_on_board(board, character)
 
-def take_item(character, board, item_coordinates_list):
-    set_empty_coordinates_on_board(board, item_coordinates_list)
-    item = get_item_from_items(item_coordinates_list)
+def take_item(character, item, board):
+    item_coordiantes_list = [get_item_coordinates(item)]
+    set_empty_coordinates_on_board(board, item_coordiantes_list)
     add_item_to_inventory(character, item)
 
 
-def try_move(character, direction, board):
+def try_move(character, direction, level):
+    board, opponents, items  = get_board_opponents_items(level)
     try:
-        move(character, direction, board)
-    except MoreCoordinatesInListException:
-        print('There is more coordinates to unpack, please implement the functions for bigger objects!!!')
+        move(character, direction, level)
     except FightException:
         print("There is opponent in front of you please implement the functions for fighting")
     except ItemFoundException as exception:
         item_coordiantes = [exception.coordinates]
-        take_item(character, board, item_coordiantes)
-        move(character, direction, board)
+        item = get_item_by_coordiantes(items, item_coordiantes)
+        print('item: ', item, 'items: ',  items)
+        take_item(character, item, board)
+        move(character, direction, level)

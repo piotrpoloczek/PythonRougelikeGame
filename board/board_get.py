@@ -18,7 +18,13 @@ def get_board_coordiantes(board, checking_cell):
                 coordinate = create_coordinates(item_index, row_index)
                 available_coordiantes.append(coordinate)
     return available_coordiantes
-    
+
+def get_board_coordiante(board, checking_cell):
+    for row_index, row in enumerate(board):
+        for item_index, item in enumerate(row):
+            if board[row_index][item_index] == checking_cell:
+                return create_coordinates(item_index, row_index)
+
 def get_board_height(board):
     return len(board)
 

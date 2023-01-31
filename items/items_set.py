@@ -1,4 +1,5 @@
-from items.items_const import TYPE, NAME, QUANTITY, POWER, SYMBOL
+from items.items_const import TYPE, NAME, QUANTITY, POWER, SYMBOL, COORDINATES
+from coordinates.coordinates_create import create_coordinates_list_one_coordinate
 
 
 def set_type(item, type):
@@ -15,3 +16,7 @@ def set_power(item, power):
 
 def set_symbol(item, symbol):
     item[SYMBOL] = symbol
+
+def set_coordinates(item, coordinates):
+    item[COORDINATES] = coordinates
+

@@ -22,8 +22,8 @@ def set_attack(character, attack):
 def set_hp(character, hp):
     character[HP] = hp
 
-def set_inventory(character, hp):
-    character[INVENTORY] = hp
+def set_inventory(character, inventory):
+    character[INVENTORY] = inventory
 
 def set_coordinates_list(character, coordinates_list):
     character[COORDINATES] = coordinates_list
