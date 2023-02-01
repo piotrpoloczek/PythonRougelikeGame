@@ -1,15 +1,15 @@
-from coordinates.coordinates_get import get_x_coordinate, get_y_coordinate
-from character.character_get import get_coordinates
-from character.character_set import set_coordinates_list
-from coordinates.coordinates_create import create_coordinates_list_one_coordinate
+from entities.coordinates.coordinates_get import get_x_coordinate, get_y_coordinate
+from entities.character.character_get import get_coordinates
+from entities.character.character_set import set_coordinates_list
+from entities.coordinates.coordinates_create import create_coordinates_list_one_coordinate
 from exception.exception_custom import (
     MoreCoordinatesInListException, FightException, ItemFoundException
 )
-from character.character_coordinates import coordinate_list_append
+from entities.character.character_coordinates import coordinate_list_append
 from board.board_check import check_new_coordinates
 from board.board_set import set_character_on_board, set_empty_coordinates_on_board
-from items.items_get import get_items_from_board, get_item_by_coordiantes, get_item_coordinates
-from character.player.player_inventory import add_item_to_inventory
+from entities.items.items_get import get_items_from_board, get_item_by_coordiantes, get_item_coordinates
+from entities.character.player.player_inventory import add_item_to_inventory
 from game.game_get import get_board_opponents_items
 
 

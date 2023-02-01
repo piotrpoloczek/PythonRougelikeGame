@@ -1,8 +1,8 @@
-from character.character_const import (
+from entities.character.character_const import (
     NAME, POSITION_X, POSITION_Y, 
     SYMBOL, ATTACK, HP, INVENTORY, COORDINATES
 )
-from coordinates.coordinates_get import get_x_coordinate, get_y_coordinate
+from entities.coordinates.coordinates_get import get_x_coordinate, get_y_coordinate
 from exception.exception_custom import MoreCoordinatesInListException
 
 

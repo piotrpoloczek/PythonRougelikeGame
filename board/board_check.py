@@ -1,8 +1,8 @@
 from exception.exception_custom import CoordinateException, ItemFoundException, FightException
 from board.board_get import get_board_available_coordiantes, get_board_character_coordinates
-from items.items_get import get_board_items_coordiantes, get_items_from_board
+from entities.items.items_get import get_board_items_coordiantes, get_items_from_board
 from game.game_get import get_board_opponents_items
-from character.opponent.opponent_get import get_coordiantes_with_opponents, remove_symbol
+from entities.character.opponent.opponent_get import get_coordiantes_with_opponents, remove_symbol
 
 
 def check_new_coordinates(coordiantes_list, character, level):

@@ -1,4 +1,4 @@
-from coordinates.coordinates_set import set_x_coordinate, set_y_coordinate
+from entities.coordinates.coordinates_set import set_x_coordinate, set_y_coordinate
 
 
 def create_coordinates(x_coordinate, y_coordinate):

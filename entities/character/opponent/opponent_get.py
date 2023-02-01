@@ -1,11 +1,11 @@
 from copy import deepcopy
-from character.character_const import SYMBOL
-from character.opponent.opponent_list import OPPONENTS
-from character.character_get import get_icon, get_coordinates
-from character.character_set import set_coordinates_list
+from entities.character.character_const import SYMBOL
+from entities.character.opponent.opponent_list import OPPONENTS
+from entities.character.character_get import get_icon, get_coordinates
+from entities.character.character_set import set_coordinates_list
 from board.board_get import get_board_coordiante, get_board_coordiantes_symbol
-from coordinates.coordinates_get import get_x_y_coordinates
-from coordinates.coordinates_create import create_coordinates
+from entities.coordinates.coordinates_get import get_x_y_coordinates
+from entities.coordinates.coordinates_create import create_coordinates
 
 
 def get_all_symbols():
@@ -60,6 +60,3 @@ def get_opponent_by_symbol(symbol):
     for opponent in OPPONENTS:
         if get_icon(opponent) == symbol:
             return opponent
-
-def get_opponent_by_coordiantes(items, coordinates):
-    pass

@@ -1,4 +1,3 @@
 WALL = '#'
 EMPTY_COORDINATES = '-'
 EMPTY_SPACE = '_'
-ITEM = 'I'

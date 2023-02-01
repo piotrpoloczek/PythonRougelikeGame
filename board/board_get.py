@@ -1,7 +1,7 @@
-from coordinates.coordinates_create import create_coordinates
+from entities.coordinates.coordinates_create import create_coordinates
 from board.board_const import EMPTY_COORDINATES
-from character.character_get import get_icon
-from character.character_set import set_icon
+from entities.character.character_get import get_icon
+from entities.character.character_set import set_icon
 
 
 def get_board_available_coordiantes(board):

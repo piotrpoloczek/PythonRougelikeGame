@@ -1,5 +1,5 @@
-from character.character_set import set_inventory
-from character.character_get import get_inventory
+from entities.character.character_set import set_inventory
+from entities.character.character_get import get_inventory
 
 
 def add_item_to_inventory(character, item):

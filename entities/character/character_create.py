@@ -1,4 +1,4 @@
-from character.character_set import (
+from entities.character.character_set import (
     set_name, set_hp, set_attack, set_icon, set_coordinates_list,
 )
 

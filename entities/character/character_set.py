@@ -1,4 +1,4 @@
-from character.character_const import (
+from entities.character.character_const import (
     NAME, POSITION_X, POSITION_Y, 
     SYMBOL, ATTACK, HP, INVENTORY, COORDINATES
 )

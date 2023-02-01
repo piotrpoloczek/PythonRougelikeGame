@@ -1,13 +1,13 @@
 import random
-from coordinates.coordinates_const import KEYS
+from entities.coordinates.coordinates_const import KEYS
 from view.view_user_input import get_user_key
 from game.game_get import get_game, get_board_opponents_items, get_items
 from board.board_view import display_board
-from coordinates.coordinates_function import input_to_directions
+from entities.coordinates.coordinates_function import input_to_directions
 from exception.exception_custom import CoordinateException
-from character.character_movement import try_move
+from entities.character.character_movement import try_move
 from view.view_functions import clear_screen
-from items.items_list import ITEMS
+from entities.items.items_list import ITEMS
 
 
 def turn_run(game):
@@ -15,7 +15,7 @@ def turn_run(game):
     board, opponents, items  = get_board_opponents_items(level)
     items = get_items(level)
 
-    #clear_screen()
+    clear_screen()
     display_board(board)
     print(player)
     print(opponents)

@@ -1,4 +1,4 @@
-from items.items_create import create_food, create_weapon
+from entities.items.items_create import create_food, create_weapon
 
 
 FOODS = [

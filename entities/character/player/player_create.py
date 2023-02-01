@@ -1,10 +1,10 @@
-from character.character_create import create_character
+from entities.character.character_create import create_character
 from view.view_user_input import get_user_input
-from character.player.player_const import (
+from entities.character.player.player_const import (
     PLAYER_ICON, PLAYER_POSITION, PLAYER_START_X, 
     PLAYER_START_Y, HP, ATTACK
 )
-from coordinates.coordinates_create import create_coordinates_list_one_coordinate, create_coordinates
+from entities.coordinates.coordinates_create import create_coordinates_list_one_coordinate, create_coordinates
 
 
 def get_starting_inventory():

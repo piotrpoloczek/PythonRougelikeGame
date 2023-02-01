@@ -1,6 +1,6 @@
 from exception.exception_custom import CoordinateException
-from coordinates.coordinates_get import get_x_y_coordinates
-from character.character_get import get_coordinates
+from entities.coordinates.coordinates_get import get_x_y_coordinates
+from entities.character.character_get import get_coordinates
 
 
 def set_character_on_board(board, player):

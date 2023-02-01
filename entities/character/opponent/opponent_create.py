@@ -1,6 +1,6 @@
 import random
-from character.character_const import RANDOM_MULTIPLICATOR
-from character.character_create import create_character
+from entities.character.character_const import RANDOM_MULTIPLICATOR
+from entities.character.character_create import create_character
 
 
 def random_attribute(attribute):

@@ -1,4 +1,4 @@
-from character.opponent.opponent_create import create_opponent
+from entities.character.opponent.opponent_create import create_opponent
 
 
 OPPONENTS = [

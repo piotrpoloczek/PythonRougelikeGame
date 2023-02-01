@@ -1,6 +1,6 @@
-from coordinates.coordinates_const import DIRECTIONS
+from entities.coordinates.coordinates_const import DIRECTIONS
 from exception.exception_custom import CoordinateException
-from coordinates.coordinates_create import create_coordinates
+from entities.coordinates.coordinates_create import create_coordinates
 
 
 def key_in_directions(key):

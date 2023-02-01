@@ -1,5 +1,5 @@
-from coordinates.coordinates_get import get_x_coordinate, get_y_coordinate
-from coordinates.coordinates_create import create_coordinates
+from entities.coordinates.coordinates_get import get_x_coordinate, get_y_coordinate
+from entities.coordinates.coordinates_create import create_coordinates
 
 
 def coordinate_list_append(coordinate_list, direction):

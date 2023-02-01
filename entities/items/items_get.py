@@ -1,11 +1,12 @@
 from copy import deepcopy
-from items.items_const import TYPE, NAME, QUANTITY, POWER, SYMBOL, COORDINATES
-from items.items_list import ITEMS
+from entities.entities_const import NAME, SYMBOL, COORDINATES
+from entities.items.items_const import TYPE, QUANTITY, POWER
+from entities.items.items_list import ITEMS
 from exception.exception_custom import ItemNotFoundException
 from board.board_get import get_board_coordiante, get_board_coordiantes_symbol
-from items.items_set import set_coordinates
-from coordinates.coordinates_get import get_x_y_coordinates
-from coordinates.coordinates_create import create_coordinates
+from entities.items.items_set import set_coordinates
+from entities.coordinates.coordinates_get import get_x_y_coordinates
+from entities.coordinates.coordinates_create import create_coordinates
 
 
 def get_type(item):

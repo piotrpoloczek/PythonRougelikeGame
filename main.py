@@ -1,4 +1,4 @@
-from character.player.player_create import create_player
+from entities.character.player.player_create import create_player
 from level.level_run import run_level
 from level.level_prepare import prepare_level, levels_files
 
