@@ -1,0 +1,3 @@
+WALL = '#'
+EMPTY_COORDINATES = '-'
+EMPTY_SPACE = '_'

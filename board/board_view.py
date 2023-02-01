@@ -5,12 +5,11 @@ def display_board(board):
     Returns:
     Nothing
     """
-
-    print("# " * (len(board[0]) + 2))
     for row in board:
-        line = "#"
+        line = ""
         for column in row:
-            line += f" {column}"
-        line += " #"
+            if column == '-' or column == '_':
+                line += "  "
+            else:
+                line += f" {column}"
         print(line)
-    print("# " * (len(board[0]) + 2))

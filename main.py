@@ -1,43 +1,12 @@
-import util
-import engine
-import ui
-
-from pprint import pprint as pp
-
-PLAYER_ICON = "@"
-PLAYER_START_X = 3
-PLAYER_START_Y = 3
-
-BOARD_WIDTH = 30
-BOARD_HEIGHT = 20
-
-
-DIRECTIONS = {
-    "w": (0, -1),
-    "a": (-1, 0),
-    "s": (0, 1),
-    "d": (1, 0),
-}
-
-
-def create_player():
-    """
-    Creates a 'player' dictionary for storing all player related informations - i.e. player icon, player position.
-    Fell free to extend this dictionary!
-
-    Returns:
-    dictionary
-    """
-    player = {}
-    player["x"] = PLAYER_START_X
-    player["y"] = PLAYER_START_Y
-    player["symbol"] = PLAYER_ICON
-
-    return player
+from entities.character.player.player_create import create_player
+from level.level_run import run_level
+from level.level_prepare import prepare_level, levels_files
+from game.game_set import set_game
 
 
 def main():
     player = create_player()
+<<<<<<< HEAD
     board = engine.create_board(BOARD_WIDTH, BOARD_HEIGHT)
     util.clear_screen()
     is_running = True
@@ -56,7 +25,15 @@ def main():
         else:
             pass
         util.clear_screen()
+=======
+    levels = levels_files()
+    game = {}
+>>>>>>> ab9bc23943800e1e84fcf9dbb75ed24ee39577a3
 
+    for level in levels:
+        level = prepare_level(level)
+        set_game(game, player, level)
+        run_level(game)
 
 if __name__ == "__main__":
     main()
