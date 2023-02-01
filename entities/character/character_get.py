@@ -4,6 +4,7 @@ from exception.exception_custom import MoreCoordinatesInListException
 
 FIRST_INDEX_COORDINATES = 0
 
+
 def get_x_position(character):
     return character[POSITION_X]
 

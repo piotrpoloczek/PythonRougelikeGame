@@ -1,4 +1,4 @@
-from entities.entities_const import NAME, SYMBOL, COORDINATES
+from entities.entities_const import NAME, SYMBOL, COORDINATES, TYPE
 
 
 def get_name(entity):
@@ -9,6 +9,9 @@ def get_symbol(entity):
 
 def get_coordinates(entity):
     return entity[COORDINATES]
+
+def get_type(entity):
+    return entity[TYPE]
 
 def get_attribute(entity, attribute):
     return entity[attribute]

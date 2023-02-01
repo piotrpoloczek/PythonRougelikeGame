@@ -33,4 +33,9 @@ class ItemNotFoundException(Exception):
 
 
 class DefenderDie(Exception):
+    def __init__(self, defender):
+        self.defender = defender
+
+
+class GameOver(Exception):
     pass

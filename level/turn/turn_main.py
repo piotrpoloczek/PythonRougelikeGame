@@ -15,9 +15,11 @@ def turn_run(game):
 
     #clear_screen()
     display_board(board)
+    print('++++++++++++++++++++++++++++++++++++++++')
     print(player)
     print('++++++++++++++++++++++++++++++++++++++++')
     print(opponents)
+    print('++++++++++++++++++++++++++++++++++++++++')
 
     player_turn(player, level)
 
