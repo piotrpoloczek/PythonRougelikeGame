@@ -1,5 +1,5 @@
 NAME = 'name'
-ICON = 'icon'
+SYMBOL = 'symbol'
 COORDINATES = 'coordinates'
 POSITION_X = 'x'
 POSITION_Y = 'y'

@@ -16,7 +16,7 @@ def check_new_coordinates(coordiantes_list, character, level):
     print('coordiantes_list : ', coordiantes_list)
     for coordinates in coordiantes_list:
         if coordinates in opponents_coordinates:
-            raise FightException 
+            raise FightException
         elif coordinates in item_coordinates:
             raise ItemFoundException(coordinates)
         elif coordinates not in available_coordiantes and coordinates not in character_coordinates:

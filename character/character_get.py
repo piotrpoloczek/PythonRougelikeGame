@@ -1,6 +1,6 @@
 from character.character_const import (
     NAME, POSITION_X, POSITION_Y, 
-    ICON, ATTACK, HP, INVENTORY, COORDINATES
+    SYMBOL, ATTACK, HP, INVENTORY, COORDINATES
 )
 from coordinates.coordinates_get import get_x_coordinate, get_y_coordinate
 from exception.exception_custom import MoreCoordinatesInListException
@@ -19,7 +19,7 @@ def get_y_position(character):
     return character[POSITION_Y]
 
 def get_icon(character):
-    return character[ICON]
+    return character[SYMBOL]
 
 def get_attack(character):
     return character[ATTACK]

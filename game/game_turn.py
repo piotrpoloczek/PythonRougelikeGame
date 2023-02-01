@@ -19,6 +19,7 @@ def turn_run(game):
     display_board(board)
     print(player)
     print(opponents)
+    print(items)
 
     player_turn(player, level)
     for opponent in opponents:

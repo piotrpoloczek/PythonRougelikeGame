@@ -1,6 +1,6 @@
 from character.character_const import (
     NAME, POSITION_X, POSITION_Y, 
-    ICON, ATTACK, HP, INVENTORY, COORDINATES
+    SYMBOL, ATTACK, HP, INVENTORY, COORDINATES
 )
 
 
@@ -14,7 +14,7 @@ def set_y_position(character, y_position):
     character[POSITION_Y] = y_position
 
 def set_icon(character, icon):
-    character[ICON] = icon
+    character[SYMBOL] = icon
 
 def set_attack(character, attack):
     character[ATTACK] = attack
