@@ -1,9 +1,8 @@
-from game.game_set import set_player, set_board, set_opponents, set_items
 from board.board_create import create_board_from_file
 from entities.character.opponent.opponent_get import get_opponents_from_board
-from game.game_set import set_level, set_player
 from board.board_set import set_character_on_board
 from entities.items.items_get import get_items_from_board
+from level.level_set import set_board_opponents_items_characters
 
 
 """
@@ -12,26 +11,15 @@ starting popsitions of opponents are taken from the board
 everything is wrapped in variable called level, and is returned for running
 particular level.
 """
-def prepare_level(player, file):
+def prepare_level(file):
     level = {}
     board = create_board_from_file('maps/level_1.csv')
     opponents = get_opponents_from_board(board)
     items = get_items_from_board(board)
-    set_board(level, board)
-    set_opponents(level, opponents)
-    set_items(level, items)
-    set_character_on_board(board, player)
-    game = {}
-    set_player(game, player)
-    set_level(game, level)
-    return game
+    characters = []
+    set_board_opponents_items_characters(level, board, opponents, items, characters)
+    return level
 
-"""
-files as input to this function list of files ['board_1.csv', 'board_2.csv', 'board_3.csv']
-Thanks to it we change the list of files to the list of prepared levels, with opponents and board.
-"""
-def prepare_levels(files):
-    return [prepare_level(file) for file in files]
 
 def levels_files():
     return [i for i in range(0, 3)]

@@ -1,3 +1,3 @@
 BOARD = 'board'
-OPPONENTS = 'opponents'
+LEVEL = 'level'
 PLAYER = 'player'

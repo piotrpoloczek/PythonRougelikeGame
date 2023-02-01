@@ -12,20 +12,11 @@ from entities.coordinates.coordinates_create import create_coordinates
 def get_type(item):
     return item[TYPE]
 
-def get_name(item):
-    return item[NAME]
-
 def get_quantity(item):
     return item[QUANTITY]
 
 def get_power(item):
     return item[POWER]
-
-def get_symbol(item):
-    return item[SYMBOL]
-
-def get_item_coordinates(item):
-    return item[COORDINATES]
 
 def get_item_by_symbol(symbol):
     for item in ITEMS:

@@ -1,5 +1,5 @@
 from exception.exception_custom import EndLevelException
-from game.game_turn import turn_run
+from level.turn.turn_main import turn_run
 
 
 """
