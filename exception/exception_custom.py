@@ -15,19 +15,22 @@ class MoreCoordinatesInListException(Exception):
 
 
 class FightException(Exception):
-    pass
+    def __init__(self, opponent):
+        self.opponent = opponent
 
 
 class ItemFoundException(Exception):
-    def __init__(self, coordinates):
-        self.coordinates = coordinates
+    def __init__(self, item):
+        self.item = item
+
 
 class CoordinatesOutsideBoardException(Exception):
     pass
+
 
 class ItemNotFoundException(Exception):
     pass
 
 
-class FightException(Exception):
+class DefenderDie(Exception):
     pass

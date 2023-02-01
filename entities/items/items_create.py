@@ -1,5 +1,6 @@
 from entities.items.items_const import TYPE_ARMOR, TYPE_FOOD, TYPE_SKIL, TYPE_WEAPON
-from entities.items.items_set import set_power, set_name, set_symbol, set_type, set_coordinates
+from entities.items.items_set import set_power, set_type
+from entities.entities_set import set_name, set_symbol, set_coordinates
 
 
 """

@@ -1,14 +1,13 @@
 from entities.coordinates.coordinates_create import create_coordinates
 from board.board_const import EMPTY_COORDINATES
-from entities.character.character_get import get_icon
-from entities.character.character_set import set_icon
-
+from entities.entities_get import get_symbol
+from entities.entities_set import set_symbol
 
 def get_board_available_coordiantes(board):
     return get_board_coordiantes(board, EMPTY_COORDINATES)
 
 def get_board_character_coordinates(board, character):
-    character_icon = get_icon(character)
+    character_icon = get_symbol(character)
     return get_board_coordiantes(board, character_icon)
 
 def get_board_coordiantes(board, checking_cell):
@@ -32,11 +31,11 @@ def get_board_height(board):
 def get_board_width(board):
     return len(board[0])
 
-def get_board_coordiantes_symbol(board):
+def get_board_coordiantes_symbols(board):
     coordiantes = []
     for row_index, row in enumerate(board):
         for item_index, item in enumerate(row):
             coordinate = create_coordinates(item_index, row_index)
-            set_icon(coordinate, item)
+            set_symbol(coordinate, item)
             coordiantes.append(coordinate)
     return coordiantes

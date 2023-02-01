@@ -9,3 +9,6 @@ def get_symbol(entity):
 
 def get_coordinates(entity):
     return entity[COORDINATES]
+
+def get_attribute(entity, attribute):
+    return entity[attribute]

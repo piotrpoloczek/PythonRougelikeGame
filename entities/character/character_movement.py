@@ -1,20 +1,17 @@
-from entities.coordinates.coordinates_get import get_x_coordinate, get_y_coordinate
-from entities.character.character_get import get_coordinates
+from entities.entities_get import get_coordinates
 from entities.character.character_set import set_coordinates_list
-from entities.coordinates.coordinates_create import create_coordinates_list_one_coordinate
-from exception.exception_custom import (
-    MoreCoordinatesInListException, FightException, ItemFoundException
-)
+from exception.exception_custom import FightException, ItemFoundException, DefenderDie
 from entities.character.character_coordinates import coordinate_list_append
 from board.board_check import check_new_coordinates
 from board.board_set import set_character_on_board, set_empty_coordinates_on_board
-from entities.items.items_get import get_items_from_board, get_item_by_coordiantes, get_item_coordinates
-from entities.character.player.player_inventory import add_item_to_inventory
-from game.game_get import get_board_opponents_items
+from entities.character.player.player_inventory import take_item
+from level.level_get import get_board_opponents_items_characters
+from entities.character.character_fight import fight
+
 
 
 def move(character, direction, level):
-    board, opponents, items  = get_board_opponents_items(level)
+    board, opponents, items, characters  = get_board_opponents_items_characters(level)
     old_coordinates_list = get_coordinates(character)
     new_coordinates_list = coordinate_list_append(old_coordinates_list, direction)
 
@@ -23,20 +20,20 @@ def move(character, direction, level):
     set_coordinates_list(character, new_coordinates_list)
     set_character_on_board(board, character)
 
-def take_item(character, item, board):
-    item_coordiantes_list = [get_item_coordinates(item)]
-    set_empty_coordinates_on_board(board, item_coordiantes_list)
-    add_item_to_inventory(character, item)
-
 
 def try_move(character, direction, level):
-    board, opponents, items  = get_board_opponents_items(level)
+    board, opponents, items, characters  = get_board_opponents_items_characters(level)
     try:
         move(character, direction, level)
-    except FightException:
-        print("There is opponent in front of you please implement the functions for fighting")
+    except FightException as fight_exception:
+        opponent = fight_exception.opponent
+        try:
+            fight(character, opponent)
+        except DefenderDie:
+            opponents.remove(opponent)
+            set_empty_coordinates_on_board(board, get_coordinates(opponent))
+            print('defendef died')
     except ItemFoundException as exception:
-        item_coordiantes = [exception.coordinates]
-        item = get_item_by_coordiantes(items, item_coordiantes)
-        take_item(character, item, board)
+        item = exception.item
+        take_item(character, item, level)
         move(character, direction, level)

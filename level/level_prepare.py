@@ -1,6 +1,5 @@
 from board.board_create import create_board_from_file
 from entities.character.opponent.opponent_get import get_opponents_from_board
-from board.board_set import set_character_on_board
 from entities.items.items_get import get_items_from_board
 from level.level_set import set_board_opponents_items_characters
 
