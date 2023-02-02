@@ -41,4 +41,4 @@ def try_move(character, direction, level):
     except ItemFoundException as exception:
         item = exception.item
         take_item(character, item, level)
-        move(character, direction, level)
+        try_move(character, direction, level)
