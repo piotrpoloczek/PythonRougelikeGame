@@ -132,9 +132,20 @@ def display_inventory(player,menu_board):
             items[i['name']] = items[i['name']] + 1
         else:
             items[i['name']] = 1
-    items = sorted(items.items(), key=lambda x: x[1], reverse=True)
-    for idx,key in enumerate(items):
-        item = []
-        item.append(key)
-        menu_board[8+idx] = item
+    sorted_items = sorted(items.items(), key=lambda x: x[1], reverse=True)
+    sorted_items_copy = sorted_items
+    sorted_items = dict(items)
+    keysList = [key for key in sorted_items]
+    for idx in range(len(items)):
+        line = ['#']
+        for i in keysList[idx]:
+            line.append(i)
+        line.append(':')
+        for i in str(sorted_items_copy[idx][1]):
+            line.append(i)
+        for i in range(MENU_WIDTH-len(line)):
+            line.append('#')
+        menu_board[8+idx] = line
+        if 19+idx == 20:
+            return menu_board
     return menu_board
