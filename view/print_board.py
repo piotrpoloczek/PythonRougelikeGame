@@ -1,4 +1,7 @@
 from view.menu_const import *
+from entities.character.character_get import get_attack, get_hp, get_inventory, get_name, get_lvl, get_experience
+from entities.items.items_const import NAME
+from entities.character.player.player_const import HP
 
 def print_board(board,player):
     board_m = create_menu(player,board)
@@ -31,31 +34,31 @@ def player_header_menu():
     return fill_line(data=[MENU_PLAYER_HEADER])
 
 def player_name_menu(player):
-    return fill_line(data=[player['name']])
+    return fill_line(data=[get_name(player)])
 
 def player_lvl_menu(player):
-    return fill_line(data=[MENU_LVL_HEADER])
+    return fill_line(data=[MENU_LVL_HEADER,str(get_lvl(player))])
 
 def player_experience_menu(player):
-    return fill_line(data=[MENU_EXPERIENCE_HEADER])
+    return fill_line(data=[MENU_EXPERIENCE_HEADER,str(get_experience(player))])
 
 def player_hp_menu(player):
-    return fill_line(data=[MENU_HP_HEADER,str(player['hp'])])
+    return fill_line(data=[MENU_HP_HEADER,str(get_hp(player)),'/',str(HP)])
 
 def player_attack_menu(player):
-    return fill_line(data=[MENU_ATTACK_HEADER,str(player['attack'])])
+    return fill_line(data=[MENU_ATTACK_HEADER,str(get_attack(player))])
 
 def player_inventory_menu():
     return fill_line(data=[MENU_INVENTORY_HEADER])
 
 def display_inventory(player,menu_board,board):
-    inventory = player['inventory']
+    inventory = get_inventory(player)
     items = {}
     for i in inventory:
-        if i['name'] in items.keys():
-            items[i['name']] = items[i['name']] + 1
+        if i[NAME] in items.keys():
+            items[i[NAME]] = items[i[NAME]] + 1
         else:
-            items[i['name']] = 1
+            items[i[NAME]] = 1
     sorted_items = sorted(items.items(), key=lambda x: x[1], reverse=True)
     sorted_items_copy = sorted_items
     sorted_items = dict(items)
