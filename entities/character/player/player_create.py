@@ -26,5 +26,6 @@ def create_player():
     ]
     player = create_character(TYPE_PLAYER, name, player_coordinate_list, PLAYER_ICON, ATTACK, HP, LEVEL, EXPERIENCE)
     player['inventory'] = get_starting_inventory()
+    player['equiped'] = []
 
     return player

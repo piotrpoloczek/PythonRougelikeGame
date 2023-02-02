@@ -22,6 +22,8 @@ def create_menu(player,board):
     menu_board[MENU_EXPERIENCE_POSITION] = player_experience_menu(player)
     menu_board[MENU_HP_POSITION] = player_hp_menu(player)
     menu_board[MENU_ATTACK_POSITION] = player_attack_menu(player)
+    menu_board[MENU_EQUIPED_HEADER_POSITION] = player_equiped_header()
+    menu_board[MENU_EQUIPED_POSITION] = player_equiped(player)
     menu_board[MENU_INVENTORY_POSITION-1] = player_inventory_menu()
     menu_board = display_inventory(player,menu_board,board)
     return menu_board
@@ -47,6 +49,13 @@ def player_hp_menu(player):
 
 def player_attack_menu(player):
     return fill_line(data=[MENU_ATTACK_HEADER,str(get_attack(player))])
+
+def player_equiped_header():
+    return fill_line(data=[MENU_EQUIPED_HEADER])
+
+def player_equiped(player):
+    equiped = player['equiped']
+    return fill_line(data=[])
 
 def player_inventory_menu():
     return fill_line(data=[MENU_INVENTORY_HEADER])
