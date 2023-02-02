@@ -5,6 +5,7 @@ from view.view_functions import clear_screen
 from level.turn.turn_player import player_turn
 from level.turn.turn_opponent import opponent_turn
 from board.board_set import set_character_on_board
+from view.print_board import print_board
 
 
 def turn_run(game):
@@ -14,7 +15,7 @@ def turn_run(game):
     set_character_on_board(board, player)
 
     #clear_screen()
-    display_board(board)
+    print_board(board,player)
     print('++++++++++++++++++++++++++++++++++++++++')
     print(player)
     print('++++++++++++++++++++++++++++++++++++++++')
