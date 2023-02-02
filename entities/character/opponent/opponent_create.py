@@ -10,7 +10,7 @@ def random_attribute(attribute):
 def create_opponent(name, icon, attack, hp):
     random_attack = random_attribute(attack)
     random_hp = random_attribute(hp)
-    return create_character(TYPE_OPPONENT, name, None, icon, random_attack, random_hp, lvl=1, experience=50)
+    return create_character(TYPE_OPPONENT, name, None, icon, random_attack, random_hp, level=1, experience=50)
 
 def create_opponents(board):
     pass

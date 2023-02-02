@@ -1,4 +1,4 @@
-from entities.character.character_const import POSITION_X, POSITION_Y, ATTACK, HP, INVENTORY, NAME, LVL, EXPERIENCE
+from entities.character.character_const import POSITION_X, POSITION_Y, ATTACK, HP, INVENTORY, NAME, LEVEL, EXPERIENCE
 from exception.exception_custom import MoreCoordinatesInListException
 
 
@@ -24,7 +24,7 @@ def get_name(character):
     return character[NAME]
 
 def get_lvl(character):
-    return character[LVL]
+    return character[LEVEL]
 
 def get_experience(charackter):
     return charackter[EXPERIENCE]

@@ -1,6 +1,6 @@
 from view.menu_const import *
 from entities.character.character_get import get_attack, get_hp, get_inventory, get_name, get_lvl, get_experience
-from entities.items.items_const import NAME
+from entities.entities_const import NAME
 from entities.character.player.player_const import HP
 
 def print_board(board,player):
