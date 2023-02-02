@@ -1,7 +1,7 @@
 from view.menu_const import *
 
 def print_board(board,player):
-    board_m = create_menu(player)
+    board_m = create_menu(player,board)
     for idx,i in enumerate(board):
         line = ''
         for j in i + board_m[idx]:
@@ -11,7 +11,7 @@ def print_board(board,player):
                 line += f" {j}"
         print(line)
 
-def create_menu(player):
+def create_menu(player,board):
     menu_board = create_menu_board()
     menu_board[MENU_HEADER_POSITION] = player_header_menu()
     menu_board[MENU_PLAYER_NAME_POSITION] = player_name_menu(player)
@@ -20,7 +20,7 @@ def create_menu(player):
     menu_board[MENU_HP_POSITION] = player_hp_menu(player)
     menu_board[MENU_ATTACK_POSITION] = player_attack_menu(player)
     menu_board[MENU_INVENTORY_POSITION-1] = player_inventory_menu()
-    menu_board = display_inventory(player,menu_board)
+    menu_board = display_inventory(player,menu_board,board)
     return menu_board
 
 def create_menu_board():
@@ -48,7 +48,7 @@ def player_attack_menu(player):
 def player_inventory_menu():
     return fill_line(data=[MENU_INVENTORY_HEADER])
 
-def display_inventory(player,menu_board):
+def display_inventory(player,menu_board,board):
     inventory = player['inventory']
     items = {}
     for i in inventory:
@@ -63,7 +63,7 @@ def display_inventory(player,menu_board):
     for idx in range(len(items)):
         line = fill_line(data=[keysList[idx], ':', str(sorted_items_copy[idx][1])])
         menu_board[MENU_INVENTORY_POSITION+idx] = line
-        if MENU_INVENTORY_POSITION + idx == MENU_HEIGHT - 1:
+        if MENU_INVENTORY_POSITION + idx == len(board) - 2:
             return menu_board
     return menu_board
 
