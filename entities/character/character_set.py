@@ -1,6 +1,6 @@
 from entities.character.character_const import (
     NAME, POSITION_X, POSITION_Y, 
-    SYMBOL, ATTACK, HP, INVENTORY, COORDINATES, LEVEL, EXPERIENCE
+    SYMBOL, ATTACK, HP, INVENTORY, COORDINATES, LEVEL, EXPERIENCE, MAX_HP, BASE_ATTACK
 )
 
 
@@ -19,8 +19,14 @@ def set_icon(character, icon):
 def set_attack(character, attack):
     character[ATTACK] = attack
 
+def set_base_attack(character, attack):
+    character[BASE_ATTACK] = attack
+
 def set_hp(character, hp):
     character[HP] = hp
+
+def set_max_hp(character,hp):
+    character[MAX_HP] = hp
 
 def set_lvl(entity, lvl):
     entity[LEVEL] = lvl

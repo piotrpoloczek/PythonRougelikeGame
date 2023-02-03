@@ -17,6 +17,7 @@ def print_board(board,player):
         print(line)
 
 def create_menu(player,board):
+    level_up(player)
     raise_attack(player)
     menu_board = create_menu_board()
     menu_board[MENU_FRAME_POSOTION] = menu_frame()
@@ -46,10 +47,10 @@ def player_lvl_menu(player):
     return fill_line(data=[MENU_LVL_HEADER,str(get_lvl(player))])
 
 def player_experience_menu(player):
-    return fill_line(data=[MENU_EXPERIENCE_HEADER,str(get_experience(player))])
+    return fill_line(data=[MENU_EXPERIENCE_HEADER,str(get_experience(player)),'/',str(experience_levels(get_lvl(player)))])
 
 def player_hp_menu(player):
-    return fill_line(data=[MENU_HP_HEADER,str(get_hp(player)),'/',str(HP)])
+    return fill_line(data=[MENU_HP_HEADER,str(get_hp(player)),'/',str(player[character_const.MAX_HP])])
 
 def player_attack_menu(player):
     return fill_line(data=[MENU_ATTACK_HEADER,str(get_attack(player))])
@@ -111,4 +112,18 @@ def raise_attack(player):
     for i in inventory:
         if i[items_const.TYPE] == items_const.TYPE_WEAPON:
             weapons_strenght.append(i[items_const.POWER])
-    player[character_const.ATTACK] = sum(weapons_strenght) + ATTACK
+    player[character_const.ATTACK] = sum(weapons_strenght) + player[character_const.BASE_ATTACK]
+
+def experience_levels(lvl):
+    return EXPERIENCE_LEVELS[lvl]
+
+def hp_levels(lvl):
+    return HP_LEVELS[lvl]
+
+def level_up(player):
+    if get_experience(player) >= experience_levels(get_lvl(player)):
+        player[character_const.EXPERIENCE] = 0
+        player[character_const.LEVEL] = player[character_const.LEVEL] + 1
+        player[character_const.HP] = hp_levels(get_lvl(player))
+        player[character_const.MAX_HP] = hp_levels(get_lvl(player))
+        player[character_const.BASE_ATTACK] = player[character_const.BASE_ATTACK] + 10
