@@ -16,6 +16,7 @@ def print_board(board,player):
 
 def create_menu(player,board):
     menu_board = create_menu_board()
+    menu_board[MENU_FRAME_POSOTION] = menu_frame()
     menu_board[MENU_HEADER_POSITION] = player_header_menu()
     menu_board[MENU_PLAYER_NAME_POSITION] = player_name_menu(player)
     menu_board[MENU_LVL_POSITION] = player_lvl_menu(player)
@@ -72,22 +73,31 @@ def display_inventory(player,menu_board,board):
     sorted_items_copy = sorted_items
     sorted_items = dict(items)
     keysList = [key for key in sorted_items]
+    a = 0
     for idx in range(len(items)):
+        a = idx
         line = fill_line(data=[keysList[idx], ':', str(sorted_items_copy[idx][1])])
-        menu_board[MENU_INVENTORY_POSITION+idx] = line
+        menu_board[MENU_INVENTORY_POSITION + idx] = line
         if MENU_INVENTORY_POSITION + idx == len(board) - 2:
             return menu_board
+    if items == {}:
+        menu_board[MENU_INVENTORY_POSITION + a] = menu_frame()
+    else:
+        menu_board[MENU_INVENTORY_POSITION + a + 1] = menu_frame()
     return menu_board
 
 def fill_end_of_line(line):
-    return line + [ MENU_SPACER for i in range(MENU_WIDTH-len(line))]
+    return line + [ MENU_SPACER for i in range(MENU_WIDTH - (len(line)) - 1)] + [MENU_FRAME]
 
 def input_data_to_line(line,data):
     return line + [i for i in data]
 
 def fill_line(data):
-    line = [MENU_SPACER]
+    line = [MENU_FRAME]
     for i in data:
         line = input_data_to_line(line,i)
     line = fill_end_of_line(line)
     return line
+
+def menu_frame():
+    return [MENU_FRAME for i in range(MENU_WIDTH)]
