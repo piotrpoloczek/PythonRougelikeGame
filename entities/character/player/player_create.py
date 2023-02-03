@@ -20,9 +20,6 @@ def create_player():
     # for debuging purpouses
     player_coordinate_list = [
         create_coordinates(3, 3),
-        create_coordinates(3, 4),
-        create_coordinates(4, 3),
-        create_coordinates(4, 4),
     ]
     player = create_character(TYPE_PLAYER, name, player_coordinate_list, PLAYER_ICON, ATTACK, HP, LEVEL, EXPERIENCE)
     player['inventory'] = get_starting_inventory()

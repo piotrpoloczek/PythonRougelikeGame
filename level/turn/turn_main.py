@@ -25,4 +25,5 @@ def turn_run(game):
     player_turn(player, level)
 
     for opponent in opponents:
+        set_character_on_board(board, opponent)
         opponent_turn(opponent, player, level)

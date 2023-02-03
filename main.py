@@ -3,11 +3,13 @@ from entities.character.player.player_create import create_player
 from level.level_run import run_level
 from level.level_prepare import prepare_level, levels_files
 from game.game_set import set_game
+from maps.maps_const import MAPS
+
 
 
 def main():
     player = create_player()
-    levels = levels_files()
+    levels = MAPS
     game = {}
 
     try:    

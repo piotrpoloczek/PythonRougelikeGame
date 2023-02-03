@@ -1,10 +1,13 @@
 from entities.coordinates.coordinates_create import create_coordinates
-from board.board_const import EMPTY_COORDINATES
+from board.board_const import EMPTY_COORDINATES, EXIT_COORDINATES
 from entities.entities_get import get_symbol
 from entities.entities_set import set_symbol
 
 def get_board_available_coordiantes(board):
     return get_board_coordiantes(board, EMPTY_COORDINATES)
+
+def get_exit_coordinates(board):
+    return get_board_coordiantes(board, EXIT_COORDINATES)
 
 def get_board_character_coordinates(board, character):
     character_icon = get_symbol(character)

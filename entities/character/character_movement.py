@@ -1,5 +1,6 @@
 from entities.entities_get import get_coordinates, get_type
-from entities.character.character_set import set_coordinates_list
+from entities.character.character_set import set_coordinates_list, set_experience
+from entities.character.character_get import get_experience
 from exception.exception_custom import FightException, ItemFoundException, DefenderDie, GameOver
 from entities.character.character_coordinates import coordinate_list_append
 from board.board_check import check_new_coordinates
@@ -19,18 +20,22 @@ def move(character, direction, level):
     set_coordinates_list(character, new_coordinates_list)
     set_character_on_board(board, character)
 
-def try_move(character, direction, level):
+def try_move(character, direction, level, player):
     board, opponents, items, characters  = get_board_opponents_items_characters(level)
     try:
         move(character, direction, level)
     except FightException as fight_exception:
         opponent = fight_exception.opponent
+        print(opponent)
         try:
             fight(character, opponent)
         except DefenderDie as defender_die:
             defender = defender_die.defender
             if get_type(defender) == 'opponent':
                 opponents.remove(opponent)
+                experience = get_experience(defender)
+                player_experience = get_experience(player) + experience
+                set_experience(player, player_experience)
             else:
                 """
                 Raised game over when player die
@@ -41,4 +46,5 @@ def try_move(character, direction, level):
     except ItemFoundException as exception:
         item = exception.item
         take_item(character, item, level)
-        try_move(character, direction, level)
+        try_move(character, direction, level, player)
+

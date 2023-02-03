@@ -1,5 +1,5 @@
-from exception.exception_custom import CoordinateException, ItemFoundException, FightException
-from board.board_get import get_board_available_coordiantes, get_board_character_coordinates
+from exception.exception_custom import CoordinateException, ItemFoundException, FightException, ExitException
+from board.board_get import get_board_available_coordiantes, get_board_character_coordinates, get_exit_coordinates
 from level.level_get import get_board_opponents_items_characters
 from entities.entities_get_all import get_list_coordiantes_from_entities, get_entity_by_coordinates
 from entities.entities_get import get_coordinates
@@ -20,14 +20,14 @@ def check_new_coordinates(coordiantes_list, character, level):
 
 
     for coordinates in coordiantes_list:
-        if check_coordinate_in_opponents(coordinates, opponents):
+        if check_coordinate_in_opponents(coordinates, opponents) and coordinates not in character_coordinates:
             opponent = get_entity_by_coordinates(opponents, [coordinates])
             raise FightException(opponent)
         elif check_coordinate_in_items(coordinates, items):
             item = get_entity_by_coordinates(items, [coordinates])
-            print('items: ', items, coordinates)
-            print(item)
             raise ItemFoundException(item)
+        elif coordinates in get_exit_coordinates(board):
+            raise ExitException
         elif coordinates not in available_coordiantes and coordinates not in character_coordinates:
             raise CoordinateException
     return True

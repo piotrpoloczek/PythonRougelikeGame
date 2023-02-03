@@ -1,4 +1,4 @@
-from exception.exception_custom import EndLevelException
+from exception.exception_custom import EndLevelException, ExitException
 from level.turn.turn_main import turn_run
 
 
@@ -13,5 +13,5 @@ def run_level(game):
     try:
         while True:
             turn_run(game)
-    except EndLevelException:
+    except ExitException:
         return

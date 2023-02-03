@@ -8,6 +8,6 @@ def player_turn(player, level):
     user_input = get_user_key()
     try:
         direction = input_to_directions(user_input)
-        try_move(player, direction, level)
+        try_move(player, direction, level, player)
     except CoordinateException:
         player_turn(player, level)

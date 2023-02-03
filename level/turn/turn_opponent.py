@@ -9,6 +9,6 @@ def opponent_turn(opponent, player, level):
     random_key = random.choice(KEYS)
     try:
         direction = input_to_directions(random_key)
-        try_move(opponent, direction, level)
+        try_move(opponent, direction, level, player)
     except CoordinateException:
         opponent_turn(opponent, player, level)
