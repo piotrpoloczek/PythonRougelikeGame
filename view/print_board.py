@@ -1,7 +1,9 @@
 from view.menu_const import *
 from entities.character.character_get import get_attack, get_hp, get_inventory, get_name, get_lvl, get_experience
 from entities.entities_const import NAME
-from entities.character.player.player_const import HP
+from entities.character.player.player_const import HP, ATTACK
+from entities.character import character_const
+from entities.items import items_const
 
 def print_board(board,player):
     board_m = create_menu(player,board)
@@ -15,6 +17,7 @@ def print_board(board,player):
         print(line)
 
 def create_menu(player,board):
+    raise_attack(player)
     menu_board = create_menu_board()
     menu_board[MENU_FRAME_POSOTION] = menu_frame()
     menu_board[MENU_HEADER_POSITION] = player_header_menu()
@@ -101,3 +104,11 @@ def fill_line(data):
 
 def menu_frame():
     return [MENU_FRAME for i in range(MENU_WIDTH)]
+
+def raise_attack(player):
+    inventory = get_inventory(player)
+    weapons_strenght = []
+    for i in inventory:
+        if i[items_const.TYPE] == items_const.TYPE_WEAPON:
+            weapons_strenght.append(i[items_const.POWER])
+    player[character_const.ATTACK] = sum(weapons_strenght) + ATTACK
