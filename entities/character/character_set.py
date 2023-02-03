@@ -1,6 +1,6 @@
 from entities.character.character_const import (
     NAME, POSITION_X, POSITION_Y, 
-    SYMBOL, ATTACK, HP, INVENTORY, COORDINATES
+    SYMBOL, ATTACK, HP, INVENTORY, COORDINATES, LEVEL, EXPERIENCE
 )
 
 
@@ -21,6 +21,12 @@ def set_attack(character, attack):
 
 def set_hp(character, hp):
     character[HP] = hp
+
+def set_lvl(entity, lvl):
+    entity[LEVEL] = lvl
+
+def set_experience(entity, experience):
+    entity[EXPERIENCE] = experience
 
 def set_inventory(character, inventory):
     character[INVENTORY] = inventory
