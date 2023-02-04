@@ -4,14 +4,16 @@ from entities.entities_const import SYMBOL, COORDINATES
 
 def get_entity_by_attribute(entities, attribute, attribute_value):
     for entity in entities:
-        if get_attribute(entity, attribute) == attribute_value:
+        print('entity attribute: ', get_attribute(entity, attribute))
+        print('attribute value: ', attribute_value)
+        if attribute_value in get_attribute(entity, attribute):
             return entity
 
 def get_entity_by_symbol(entities, symbol):
     return get_entity_by_attribute(entities, SYMBOL, symbol)
 
 def get_entity_by_coordinates(entities, coordinates):
-    return get_entity_by_attribute(entities, COORDINATES, coordinates)
+    return get_entity_by_attribute(entities, COORDINATES, coordinates[0])
 
 def get_list_attributes_from_entities(entities, attribute):
     list_attributes = []

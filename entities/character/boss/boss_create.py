@@ -10,4 +10,4 @@ def create_boss():
         create_coordinates(20, 21),
         create_coordinates(21, 21),
     ]
-    return create_character(TYPE_OPPONENT, 'boss', coordinates, 'B', 500, 2000, 30, 3000)
+    return create_character(TYPE_OPPONENT, 'boss', coordinates, 'B', 200, 2000, 30, 3000)
