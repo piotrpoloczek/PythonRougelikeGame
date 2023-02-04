@@ -14,7 +14,7 @@ def turn_run(game):
 
     set_character_on_board(board, player)
 
-    #clear_screen()
+    ##clear_screen()
     print_board(board,player)
     print('++++++++++++++++++++++++++++++++++++++++')
     print(player)
