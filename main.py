@@ -6,6 +6,7 @@ from level.level_run import run_level
 from level.level_prepare import prepare_level, levels_files
 from game.game_set import set_game
 from maps.maps_const import MAPS
+from view.view_functions import clear_screen
 
 
 
@@ -22,6 +23,7 @@ def main():
             set_game(game, player, level)
             run_level(game)
         else:
+            clear_screen()
             print("player won")
     except GameOver:
         print('Player died!')
