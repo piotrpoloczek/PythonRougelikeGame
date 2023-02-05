@@ -19,7 +19,6 @@ def print_board(board,player):
 def create_menu(player,board):
     level_up(player)
     raise_attack(player)
-    regenerate_hp(player)
     menu_board = create_menu_board()
     menu_board[MENU_FRAME_POSOTION] = menu_frame()
     menu_board[MENU_HEADER_POSITION] = player_header_menu()
@@ -128,14 +127,3 @@ def level_up(player):
         player[character_const.HP] = hp_levels(get_lvl(player))
         player[character_const.MAX_HP] = hp_levels(get_lvl(player))
         player[character_const.BASE_ATTACK] = player[character_const.BASE_ATTACK] + 10
-
-def regenerate_hp(player):
-    inventory = get_inventory(player)
-    weapons_strenght = []
-    for i in inventory:
-        if i[items_const.TYPE] == items_const.TYPE_FOOD:
-            weapons_strenght.append(i[items_const.POWER])
-    if get_hp(player) + int(sum(weapons_strenght)/5) <= player[character_const.MAX_HP]:
-        player['hp'] = get_hp(player) + int(sum(weapons_strenght)/5)
-    else:
-        player['hp'] = player[character_const.MAX_HP]
